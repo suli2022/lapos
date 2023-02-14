@@ -9,34 +9,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Sablon</h1>
+        <h1>Dolgozók</h1>
         
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
+            Hozzáad
         </button>
-
-        <div class="addForm row">
-            
-            <div class="col">
-                <input type="text" placeholder="név"
-                id="name" class="form-control">
-            </div>
-            <div class="col">
-                <input type="text" placeholder="település"
-                id="city" class="form-control">
-            </div>
-            <div class="col">
-                <input type="text" placeholder="fizetés"
-                id="salary" class="form-control">
-            </div>
-
-            <div class="col">
-                <button id="addButton"
-                class="btn btn-primary">Hozzáad</button>
-            </div>
-
-        </div>
 
         <table id="dolgozoTabla" 
         class="table table-striped">
@@ -53,8 +31,7 @@
         </table>
 
     </div>
-    <script src="app.js"></script>
-    <script src="js/bootstrap.js"></script>
+
 
 
 
@@ -64,21 +41,52 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Dolgozó hozzáadása
+          </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+         
+
+
+          <div class="addForm">
+            
+            <div class="mt-3">
+                <input type="text" placeholder="név"
+                id="name" class="form-control">
+            </div>
+            <div class="mt-3">
+                <input type="text" placeholder="település"
+                id="city" class="form-control">
+            </div>
+            <div class="mt-3">
+                <input type="text" placeholder="fizetés"
+                id="salary" class="form-control">
+            </div>
+
+        </div>
+
+
+
+
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" 
+          data-bs-dismiss="modal">Bezár</button>
+
+          <button type="button" class="btn btn-primary"
+          id="addButton"
+          data-bs-dismiss="modal">Mentés</button>
+
         </div>
       </div>
     </div>
   </div>
 
-
+  <script src="app.js"></script>
+  <script src="js/bootstrap.js"></script>
 
 </body>
 </html>
