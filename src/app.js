@@ -5,6 +5,11 @@ const cityInput = document.querySelector("#city");
 const salaryInput = document.querySelector("#salary");
 const addButton = document.querySelector("#addButton");
 
+const modifyIdInput = document.querySelector("#modifyId");
+const modifyNameInput = document.querySelector("#modifyName");
+const modifyCityInput = document.querySelector("#modifyCity");
+const modifySalaryInput = document.querySelector("#modifySalary");
+
 const dolgozoLista = [
     { id: 1, name: "Pali", city: "Szolnok", salary: 385 },
     { id: 2, name: "Kait", city: "Szolnok", salary: 320 },
@@ -29,6 +34,7 @@ function loadEmployees() {
         tr.append(tdCity);
         tr.append(tdSalary);
         tr.append(generateDeleteButton(dolgozo.id));
+        tr.append(generateModifyButton(dolgozo));
     });
 }
 
@@ -58,6 +64,27 @@ function handleDeleteEvent(button, id) {
     });
 }
 
+function generateModifyButton(dolgozo) {
+    let tdModify = document.createElement('td');
+    let button = document.createElement('button');
+    button.textContent = "Módosítás";
+    button.classList = "btn btn-primary";
+    button.setAttribute('data-bs-toggle', 'modal'); 
+    button.setAttribute('data-bs-target', '#modifyModal'); 
+    handleModifyEvent(button, dolgozo);
+    tdModify.append(button);
+    return tdModify;
+}
+
+function handleModifyEvent(button, dolgozo) {
+    button.addEventListener('click', () => {        
+        console.log(dolgozo.name)
+        modifyIdInput.value = dolgozo.id;
+        modifyNameInput.value = dolgozo.name;
+        modifyCityInput.value = dolgozo.city;
+        modifySalaryInput.value = dolgozo.salary;
+    });
+}
 
 addButton.addEventListener('click', () => {
     addEmployee();
